@@ -1,0 +1,9 @@
+@extends('front.layouts.app')
+@section('_content')
+  @include('front.includes.home')
+  @include('front.includes.about')
+  @include('front.includes.portfolio')
+  @include('front.includes.progress')
+  @include('front.includes.home-contact')
+  @include('front.includes.contact')
+@endsection
