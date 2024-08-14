@@ -22,3 +22,10 @@
     <a href="{{route('admin.first-section.index')}}" class="nav-link">
         <span>First Section</span></a>
 </li>
+
+
+<li class="nav-item ">
+    <a href="{{route('admin.about.index')}}" class="nav-link">
+        <span>About</span></a>
+</li>
+

@@ -3,6 +3,7 @@
 
 
 //,'middleware'=>'admin'
+use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\FirstSectionController;
 use App\Http\Controllers\Admin\MenuController;
@@ -16,4 +17,5 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware' => 'admin'],function
     Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
     Route::resource('/menus',MenuController::class)->except('show');
     Route::resource('/first-section',FirstSectionController::class)->except('show');
+    Route::resource('/about',AboutController::class)->except('show');
 });
