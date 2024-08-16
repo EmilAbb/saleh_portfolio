@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\About;
 use App\Models\FirstSection;
 use App\Models\Menu;
+use App\Models\Skill;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -15,6 +16,8 @@ class SiteController extends Controller
         $menus = Menu::all();
         $firstSection = FirstSection::first();
         $aboutMe = About::first();
-        return view('front.pages.home',compact('menus','firstSection','aboutMe'));
+        $skillAll = Skill::all();
+        $skillFeatureds = Skill::where('featured',1)->get();
+        return view('front.pages.home',compact('menus','firstSection','aboutMe','skillAll','skillFeatureds'));
     }
 }

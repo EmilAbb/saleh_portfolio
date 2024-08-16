@@ -23,30 +23,14 @@
                     </div>
                     <div class="list">
                         <ul>
-                            <li>
-                                <div class="list_inner">
-                                    <img class="svg" src="{{asset('assets/img/svg/checked.svg')}}" alt="" />
-                                    <span>Web Development</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="list_inner">
-                                    <img class="svg" src="{{asset('assets/img/svg/checked.svg')}}" alt="" />
-                                    <span>Search Engine Optimization</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="list_inner">
-                                    <img class="svg" src="{{asset('assets/img/svg/checked.svg')}}" alt="" />
-                                    <span>Social Media Marketing</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="list_inner">
-                                    <img class="svg" src="{{asset('assets/img/svg/checked.svg')}}" alt="" />
-                                    <span>Content Generation</span>
-                                </div>
-                            </li>
+                            @foreach($skillAll as $skill)
+                                <li>
+                                    <div class="list_inner">
+                                        <img class="svg" src="{{asset('assets/img/svg/checked.svg')}}" alt="" />
+                                        <span>{{$skill->skill_name ?? ''}}</span>
+                                    </div>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="grax_tm_button">

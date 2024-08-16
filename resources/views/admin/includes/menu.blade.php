@@ -29,3 +29,8 @@
         <span>About</span></a>
 </li>
 
+<li class="nav-item ">
+    <a href="{{route('admin.skills.index')}}" class="nav-link">
+        <span>Skills</span></a>
+</li>
+

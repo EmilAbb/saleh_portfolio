@@ -7,18 +7,12 @@
             </div>
             <div class="right wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".2s">
                 <div class="kioto_progress">
-                    <div class="progress_inner" data-value="95">
-                        <span><span class="label">Web Development</span><span class="number">95%</span></span>
-                        <div class="background"><div class="bar"><div class="bar_in"></div></div></div>
-                    </div>
-                    <div class="progress_inner" data-value="80" >
-                        <span><span class="label">Brand Identity</span><span class="number">80%</span></span>
-                        <div class="background"><div class="bar"><div class="bar_in"></div></div></div>
-                    </div>
-                    <div class="progress_inner" data-value="90">
-                        <span><span class="label">Logo Design</span><span class="number">90%</span></span>
-                        <div class="background"><div class="bar"><div class="bar_in"></div></div></div>
-                    </div>
+                @foreach($skillFeatureds as $skillFeatured)
+                        <div class="progress_inner" data-value="{{$skillFeatured->skill_percent ?? ''}}">
+                            <span><span class="label">{{$skillFeatured->skill_name ?? ''}}</span><span class="number">{{$skillFeatured->skill_percent ?? ''}}%</span></span>
+                            <div class="background"><div class="bar"><div class="bar_in"></div></div></div>
+                        </div>
+                @endforeach
                 </div>
             </div>
         </div>

@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\FirstSectionController;
 use App\Http\Controllers\Admin\MenuController;
+use App\Http\Controllers\Admin\SkillController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('admin/login',[AdminController::class,'loginView'])->name('admin.login-view');
@@ -18,4 +19,5 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware' => 'admin'],function
     Route::resource('/menus',MenuController::class)->except('show');
     Route::resource('/first-section',FirstSectionController::class)->except('show');
     Route::resource('/about',AboutController::class)->except('show');
+    Route::resource('/skills',SkillController::class)->except('show');
 });
