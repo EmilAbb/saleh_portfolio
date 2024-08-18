@@ -34,3 +34,8 @@
         <span>Skills</span></a>
 </li>
 
+<li class="nav-item ">
+    <a href="{{route('admin.socials.index')}}" class="nav-link">
+        <span>Socials</span></a>
+</li>
+

@@ -28,24 +28,16 @@
                                 <p><span class="first">Phone:</span><span class="second"><a href="#">+77 033 442 55 57</a></span></p>
                             </div>
                         </li>
-                        <li>
-                            <div class="list_inner">
-                                <img class="svg" src="{{asset('assets/img/svg/social/dribbble.svg')}}" alt="" />
-                                <p><span class="first">Website:</span><span class="second"><a href="#">www.myaddress.com</a></span></p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="list_inner">
-                                <img class="svg" src="{{asset('assets/img/svg/social/twitter.svg')}}" alt="" />
-                                <p><span class="first">Twitter:</span><span class="second"><a href="#">@twitternickname</a></span></p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="list_inner">
-                                <img class="svg" src="{{asset('assets/img/svg/social/facebook.svg')}}" alt="" />
-                                <p><span class="first">Facebook:</span><span class="second"><a href="#">@facebooknickname</a></span></p>
-                            </div>
-                        </li>
+
+
+                        @foreach($socials as $social)
+                            <li>
+                                <div class="list_inner">
+                                    <img class="svg" src="{{asset('storage/'.$social->social_image ?? '')}}" alt="" />
+                                    <p><span class="first">{{$social->social_label ?? ''}}:</span><span class="second"><a target="_blank" href="{{$social->social ?? ''}}">{{$social->social ?? ''}}</a></span></p>
+                                </div>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>

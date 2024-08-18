@@ -21,7 +21,7 @@
                     </ul>
                 </div>
                 <div class="copy wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s">
-                    <p>&copy; Copyright 2022 by Marketify</p>
+                    <p>&copy; Copyright 2024 by Emil Abbasov</p>
                 </div>
             </div>
         </div>
