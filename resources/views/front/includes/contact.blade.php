@@ -43,24 +43,25 @@
             </div>
             <div class="right wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".2s">
                 <div class="fields">
-                    <form action="/" method="post" class="contact_form" id="contact_form">
+                    <form action="{{route('createMessage')}}" method="POST" class="contact_form" id="contact_form1">
+                      <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <div class="returnmessage" data-success="Your message has been received, We will contact you soon."></div>
                         <div class="empty_notice"><span>Please Fill Required Fields</span></div>
                         <div class="first">
                             <ul>
                                 <li>
-                                    <input id="name" type="text" placeholder="Name">
+                                    <input id="name" name="name" type="text" placeholder="Full name">
                                 </li>
                                 <li>
-                                    <input id="email" type="text" placeholder="Email">
+                                    <input id="email" name="email" type="text" placeholder="Email">
                                 </li>
                             </ul>
                         </div>
                         <div class="last">
-                            <textarea id="message" placeholder="Message"></textarea>
+                            <textarea id="message" name="message" placeholder="Message"></textarea>
                         </div>
                         <div class="grax_tm_button">
-                            <a id="send_message" href="#">Send Message</a>
+                            <button  id="send_message1" type="submit">Send Message</button>
                         </div>
 
                         <!-- If you want to change mail address to yours, please open modal.php and go to line 4 -->
@@ -71,3 +72,57 @@
         </div>
     </div>
 </div>
+
+<script>
+    function grax_tm_contact_form(){
+
+        "use strict";
+
+        {{--jQuery(".contact_form #send_message").on('click', function(event){--}}
+        {{--    event.preventDefault(); // Sayfanın yeniden yüklenmesini engeller--}}
+
+        {{--    var name = jQuery(".contact_form #name").val();--}}
+        {{--    var email = jQuery(".contact_form #email").val();--}}
+        {{--    var message = jQuery(".contact_form #message").val();--}}
+        {{--    var success = jQuery(".contact_form .returnmessage").data('success');--}}
+        {{--    var csrfToken = jQuery('meta[name="csrf-token"]').attr('content');--}}
+
+        {{--    jQuery(".contact_form .returnmessage").empty(); // Önceki hata/başarı mesajını temizleyin--}}
+
+        {{--    // Boş alan kontrolü--}}
+        {{--    if(name === '' || email === '' || message === ''){--}}
+        {{--        jQuery('div.empty_notice').slideDown(500).delay(2000).slideUp(500);--}}
+        {{--    } else {--}}
+        {{--        // Verileri POST isteği ile gönder--}}
+        {{--        jQuery.ajax({--}}
+        {{--            url: "{{ route('createMessage') }}",--}}
+        {{--            method: "POST",--}}
+        {{--            data: {--}}
+        {{--                _token: csrfToken, // CSRF token'ı burada ekleniyor--}}
+        {{--                ajax_name: name,--}}
+        {{--                ajax_email: email,--}}
+        {{--                ajax_message: message--}}
+        {{--            },--}}
+        {{--            success: function(data) {--}}
+        {{--                jQuery(".contact_form .returnmessage").append(data); // Dönen mesajı ekle--}}
+
+        {{--                if(jQuery(".contact_form .returnmessage span.contact_error").length){--}}
+        {{--                    jQuery(".contact_form .returnmessage").slideDown(500).delay(2000).slideUp(500);--}}
+        {{--                } else {--}}
+        {{--                    jQuery(".contact_form .returnmessage").append("<span class='contact_success'>"+ success +"</span>");--}}
+        {{--                    jQuery(".contact_form .returnmessage").slideDown(500).delay(4000).slideUp(500);--}}
+        {{--                }--}}
+
+        {{--                if(data === ""){--}}
+        {{--                    jQuery("#contact_form")[0].reset(); // Başarı durumunda form alanlarını sıfırla--}}
+        {{--                }--}}
+        {{--            },--}}
+        {{--            error: function(xhr, status, error) {--}}
+        {{--                console.error("Error: " + error);--}}
+        {{--            }--}}
+        {{--        });--}}
+        {{--    }--}}
+        {{--});--}}
+
+    }
+</script>

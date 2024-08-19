@@ -8,9 +8,9 @@
 jQuery(document).ready(function(){
 
 	"use strict";
-	
+
 	// here all ready functions
-	
+
 	grax_tm_modalbox_news();
 	grax_tm_popupscroll();
 	grax_tm_ripple();
@@ -31,7 +31,7 @@ jQuery(document).ready(function(){
 	grax_tm_contact_form();
 	grax_tm_parallax_effect();
 	grax_tm_totop();
-	
+
 	jQuery(window).load('body', function(){
 		grax_tm_my_load();
 	});
@@ -41,7 +41,7 @@ jQuery(document).ready(function(){
 	jQuery(window).on('scroll', function(){
 		grax_tm_progress_line();
 	});
-	
+
 });
 
 // -----------------------------------------------------
@@ -53,13 +53,13 @@ jQuery(document).ready(function(){
 // -------------------------------------------------
 
 function grax_tm_modalbox_news(){
-	
+
 	"use strict";
-	
+
 	var modalBox	= jQuery('.grax_tm_modalbox_news');
 	var list 		= jQuery('.grax_tm_news .news_list ul li');
 	var closePopup	= modalBox.find('.close');
-	
+
 	list.each(function(){
 		var element 	= jQuery(this);
 		var details 	= element.find('.list_inner').html();
@@ -85,7 +85,7 @@ function grax_tm_modalbox_news(){
 		jQuery('body').removeClass('modal');
 		return false;
 	});
-	
+
 }
 
 // -----------------------------------------------------
@@ -93,33 +93,33 @@ function grax_tm_modalbox_news(){
 // -----------------------------------------------------
 
 function grax_tm_popupscroll(){
-	
+
 	"use strict";
-	
+
 	var WW				= jQuery(window).width();
 	var H				= jQuery(window).height();
 	var scrollable		= jQuery('.scrollable');
-	
+
 	var popupBox		= jQuery('.grax_tm_modalbox_news .description_wrap');
-	
+
 	if(WW >= 1200){
 		popupBox.css({height:H-140});
 	}else{
 		popupBox.css({height:H});
 	}
-	
+
 	scrollable.each(function(){
 		var element		= jQuery(this);
 		var wH			= jQuery(window).height();
-		
+
 		element.css({height: wH-140});
-		
+
 		if(WW >= 1200){
 			element.css({height: wH-140});
 		}else{
 			element.css({height: wH});
 		}
-		
+
 		element.niceScroll({
 			touchbehavior:false,
 			cursorwidth:0,
@@ -134,9 +134,9 @@ function grax_tm_popupscroll(){
 // -------------------------------------------------
 
 function grax_tm_ripple(){
-	
+
 	"use strict";
-	
+
 	jQuery('#ripple').ripples({
 		resolution: 500,
 		dropRadius: 20,
@@ -149,7 +149,7 @@ function grax_tm_ripple(){
 // -----------------------------------------------------
 
 function grax_tm_color_switcher(){
-	
+
 	"use strict";
 
 	var list	= jQuery('.grax_tm_settings .colors li a');
@@ -159,13 +159,13 @@ function grax_tm_color_switcher(){
 		var elval	= element.attr('class');
 		element.closest('.grax_tm_all_wrap').attr('data-color',''+elval+'');
 		return false;
-	});	
+	});
 }
 
 function grax_tm_switcher_opener(){
-	
+
 	"use strict";
-	
+
 	var settings	= jQuery('.grax_tm_settings');
 	var button		= settings.find('.link');
 	var direction	= settings.find('.direction li a');
@@ -212,7 +212,7 @@ function grax_tm_switcher_opener(){
 function grax_tm_cursor_switcher(){
 
 	"use strict";
-	
+
 	var wrapper		= jQuery('.grax_tm_all_wrap');
 	var button		= jQuery('.grax_tm_settings .cursor li a');
 	var show		= jQuery('.grax_tm_settings .cursor li a.show');
@@ -248,15 +248,15 @@ function grax_tm_videoplayer(){
 // -----------------------------------------------------
 
 function grax_tm_my_waypoint(){
-	
+
 	"use strict";
-	
+
 	var myWaypoint		= jQuery('.my_waypoint');
-	
+
 	myWaypoint.each(function(){
-		
+
 		var element	= jQuery(this);
-		
+
 		element.waypoint({
 			handler:function(){
 				element.addClass('load');
@@ -271,11 +271,11 @@ function grax_tm_my_waypoint(){
 // -----------------------------------------------------
 
 function grax_tm_hero_title(){
-	
+
 	"use strict";
-	
+
 	var heroText 		= jQuery('.fn_animation');
-	
+
 	heroText.each(function(){
 		var element 	= $(this);
 		var	start	 	= '<span class="word">';
@@ -299,7 +299,7 @@ function grax_tm_hero_title(){
 
 function grax_tm_hero_title_fade(){
 	"use strict";
-	
+
 	var mySpan	= jQuery('.fn_animation .character');
 	var a 		= 0;
 	var speed 	= 30;
@@ -320,9 +320,9 @@ function grax_tm_hero_title_fade(){
 // -----------------------------------------------------
 
 function grax_tm_my_load(){
-	
+
 	"use strict";
-	
+
 	grax_tm_my_waypoint();
 	setTimeout(function(){grax_tm_preloader();},1000);
 	setTimeout(function(){grax_tm_hero_title_fade();},3000);
@@ -334,7 +334,7 @@ function grax_tm_my_load(){
 
 function grax_tm_wavefy(){
 	"use strict";
-		
+
 	jQuery('#wave_img').wavify({
 		height: 10,
 		bones: 3,
@@ -349,12 +349,12 @@ function grax_tm_wavefy(){
 // -----------------------------------------------------
 
 function grax_tm_preloader(){
-	
+
 	"use strict";
-	
+
 	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
 	var preloader = $('#preloader');
-	
+
 	if (!isMobile) {
 		setTimeout(function() {
 			preloader.addClass('preloaded');
@@ -373,7 +373,7 @@ function grax_tm_preloader(){
 // -----------------------------------------------------
 
 function grax_tm_nav_bg(){
-	
+
 	"use strict";
 
 	jQuery(window).on('scroll',function(){
@@ -396,9 +396,9 @@ function grax_tm_nav_bg(){
 // -------------------------------------------------
 
 function grax_tm_anchor(){
-	
+
 	"use strict";
-	
+
 	jQuery('.anchor_nav').onePageNav();
 }
 
@@ -407,9 +407,9 @@ function grax_tm_anchor(){
 // -----------------------------------------------------
 
 function grax_tm_down(){
-	
+
 	"use strict";
-	
+
 	jQuery('.grax_tm_talk .button a').on('click',function(){
 		if($.attr(this, 'href') !== '#'){
 			$('html, body').animate({
@@ -425,15 +425,15 @@ function grax_tm_down(){
 // -----------------------------------------------------
 
 function grax_tm_hamburger(){
-		
+
 	"use strict";
-		
+
 	var hamburger 		= jQuery('.hamburger');
 	var mobileMenu		= jQuery('.grax_tm_mobile_menu .dropdown');
-	
+
 	hamburger.on('click',function(){
 		var element 	= jQuery(this);
-		
+
 		if(element.hasClass('is-active')){
 			element.removeClass('is-active');
 			mobileMenu.slideUp();
@@ -443,7 +443,7 @@ function grax_tm_hamburger(){
 		}
 		return false;
 	});
-	
+
 	jQuery('.grax_tm_mobile_menu .dropdown .dropdown_inner ul li a').on('click',function(){
 		jQuery('.hamburger').removeClass('is-active');
 		jQuery('.grax_tm_mobile_menu .dropdown').slideUp();
@@ -457,9 +457,9 @@ function grax_tm_hamburger(){
 
 function grax_tm_cursor(){
     "use strict";
-	
+
 	var myCursor	= jQuery('.mouse-cursor');
-	
+
 	if(myCursor.length){
 		if ($("body")) {
         const e = document.querySelector(".cursor-inner"),
@@ -482,11 +482,11 @@ function grax_tm_cursor(){
 // -----------------------------------------------------
 
 function grax_tm_imgtosvg(){
-	
+
 	"use strict";
-	
+
 	jQuery('img.svg').each(function(){
-		
+
 		var jQueryimg 		= jQuery(this);
 		var imgClass		= jQueryimg.attr('class');
 		var imgURL			= jQueryimg.attr('src');
@@ -516,7 +516,7 @@ function grax_tm_imgtosvg(){
 // -----------------------------------------------------
 
 function grax_tm_popup(){
-	
+
 	"use strict";
 
 	jQuery('.gallery_zoom').each(function() { // the containers for all your galleries
@@ -558,11 +558,11 @@ wow.init();
 // -----------------------------------------------------
 
 function grax_tm_data_images(){
-	
+
 	"use strict";
-	
+
 	var data			= jQuery('*[data-img-url]');
-	
+
 	data.each(function(){
 		var element			= jQuery(this);
 		var url				= element.data('img-url');
@@ -574,47 +574,7 @@ function grax_tm_data_images(){
 // ----------------    CONTACT FORM    -----------------
 // -----------------------------------------------------
 
-function grax_tm_contact_form(){
-	
-	"use strict";
-	
-	jQuery(".contact_form #send_message").on('click', function(){
-		
-		var name 		= jQuery(".contact_form #name").val();
-		var email 		= jQuery(".contact_form #email").val();
-		var message 	= jQuery(".contact_form #message").val();
-		var subject 	= jQuery(".contact_form #subject").val();
-		var success     = jQuery(".contact_form .returnmessage").data('success');
-	
-		jQuery(".contact_form .returnmessage").empty(); //To empty previous error/success message.
-		//checking for blank fields	
-		if(name===''||email===''||message===''){
-			
-			jQuery('div.empty_notice').slideDown(500).delay(2000).slideUp(500);
-		}
-		else{
-			// Returns successful data submission message when the entered information is stored in database.
-			jQuery.post("modal/contact.php",{ ajax_name: name, ajax_email: email, ajax_message:message, ajax_subject: subject}, function(data) {
-				
-				jQuery(".contact_form .returnmessage").append(data);//Append returned message to message paragraph
-				
-				
-				if(jQuery(".contact_form .returnmessage span.contact_error").length){
-					jQuery(".contact_form .returnmessage").slideDown(500).delay(2000).slideUp(500);		
-				}else{
-					jQuery(".contact_form .returnmessage").append("<span class='contact_success'>"+ success +"</span>");
-					jQuery(".contact_form .returnmessage").slideDown(500).delay(4000).slideUp(500);
-				}
-				
-				if(data===""){
-					jQuery("#contact_form")[0].reset();//To reset form fields on success
-				}
-				
-			});
-		}
-		return false; 
-	});
-}
+
 
 // -----------------------------------------------------
 // -------------    PARALLAX ANIMATION    --------------
@@ -624,9 +584,9 @@ function grax_tm_parallax_effect(){
 
 	"use strict";
 
-	if ($('.parallax').length > 0) { 
+	if ($('.parallax').length > 0) {
 	  var scene = $('.parallax').get(0);
-	  var parallax = new Parallax(scene, { 
+	  var parallax = new Parallax(scene, {
 		relativeInput: true,
 		onReady: function() { console.log('ready!');
 	  } });
@@ -638,9 +598,9 @@ function grax_tm_parallax_effect(){
 // -------------------------------------------------
 
 function tdProgress(container){
-	
+
 	"use strict";
-		
+
 	container.find('.progress_inner').each(function() {
 		var progress 		= jQuery(this);
 		var pValue 			= parseInt(progress.data('value'), 10);
@@ -657,7 +617,7 @@ jQuery('.kioto_progress').each(function() {
 	"use strict";
 
 	var pWrap 			= jQuery(this);
-	pWrap.waypoint({handler: function(){tdProgress(pWrap);},offset:'90%'});	
+	pWrap.waypoint({handler: function(){tdProgress(pWrap);},offset:'90%'});
 });
 
 // -------------------------------------------------
@@ -677,9 +637,9 @@ $(".glitch").mgGlitch({
 });
 
 function grax_tm_progress_line(){
-	
+
 	"use strict";
-	
+
 	var line			= jQuery('.progressbar .line');
 	var documentHeight 	= jQuery(document).height();
 	var windowHeight 	= jQuery(window).height();
@@ -690,16 +650,16 @@ function grax_tm_progress_line(){
 	line.css('height',position+"%");
 }
 
-/****************************/ 
-/********** TOTOP ***********/ 
-/****************************/ 
+/****************************/
+/********** TOTOP ***********/
+/****************************/
 
 function grax_tm_totop(){
-  
+
   "use strict";
-  
+
 	jQuery(".progressbar a").on('click', function(e) {
-		e.preventDefault();    
+		e.preventDefault();
 		jQuery("html, body").animate({ scrollTop: 0 }, 'slow');
 		return false;
 	});

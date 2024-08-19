@@ -39,3 +39,7 @@
         <span>Socials</span></a>
 </li>
 
+<li class="nav-item ">
+    <a href="{{route('admin.messages.index')}}" class="nav-link">
+        <span>Messages</span></a>
+</li>
