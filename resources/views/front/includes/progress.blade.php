@@ -2,8 +2,8 @@
     <div class="container">
         <div class="part_inner">
             <div class="left wow fadeInLeft" data-wow-duration="1.5s">
-                <h3>I have high skills in developing and programming</h3>
-                <p>I was doing everything in my power to provide me with all the experiences to provide cost-effective and high quality products to satisfy my customers all over the world</p>
+                <h3>{{$progressTitle->title ?? ''}}</h3>
+                <p>{{$progressTitle->text ?? ''}}</p>
             </div>
             <div class="right wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".2s">
                 <div class="kioto_progress">
