@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactMessageRequest;
 use App\Models\About;
+use App\Models\ContactMe;
 use App\Models\ContactMessage;
 use App\Models\FirstSection;
 use App\Models\Menu;
@@ -24,7 +25,8 @@ class SiteController extends Controller
         $skillFeatureds = Skill::where('featured',1)->get();
         $socials = Social::all();
         $progressTitle = ProgresTitle::first();
-        return view('front.pages.home',compact('menus','firstSection','socials','aboutMe','skillAll','skillFeatureds','progressTitle'));
+        $contactMe = ContactMe::first();
+        return view('front.pages.home',compact('menus','firstSection','socials','aboutMe','skillAll','skillFeatureds','progressTitle','contactMe'));
     }
 
     public function createMessage(ContactMessageRequest $contactMessageRequest)

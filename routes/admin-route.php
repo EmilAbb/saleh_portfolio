@@ -5,6 +5,7 @@
 //,'middleware'=>'admin'
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\ConatctMeController;
 use App\Http\Controllers\Admin\FirstSectionController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\ProgressTitleController;
@@ -26,4 +27,5 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware' => 'admin'],function
     Route::resource('/socials',SocialController::class)->except('show');
     Route::resource('/messages',ContactMessageController::class)->except('show');
     Route::resource('/progress',ProgressTitleController::class)->except('show');
+    Route::resource('/contact-me',ConatctMeController::class)->except('show');
 });

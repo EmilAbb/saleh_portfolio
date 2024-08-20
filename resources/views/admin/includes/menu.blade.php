@@ -48,3 +48,8 @@
     <a href="{{route('admin.progress.index')}}" class="nav-link">
         <span>Progress</span></a>
 </li>
+
+<li class="nav-item ">
+    <a href="{{route('admin.contact-me.index')}}" class="nav-link">
+        <span>Contact me</span></a>
+</li>
