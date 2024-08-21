@@ -40,6 +40,18 @@
                     @enderror
                 </div>
 
+                <div class="form-group">
+                    <label>Social Image Two</label>
+                    @isset($model)
+                        <br>
+                        <img width="200" src="{{asset('storage/'.$model->social_image_two)}}">
+                    @endisset
+                    <input type="file" name="social_image_two" class="form-control">
+                    @error('social_image_two')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
+                </div>
+
 
 
                 <button class="btn btn-success">Save</button>

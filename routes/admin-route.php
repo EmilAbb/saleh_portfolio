@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ConatctMeController;
 use App\Http\Controllers\Admin\FirstSectionController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\ProgressTitleController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SkillController;
 use App\Http\Controllers\Admin\SocialController;
 use App\Http\Controllers\Admin\TouchController;
@@ -30,4 +31,5 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware' => 'admin'],function
     Route::resource('/progress',ProgressTitleController::class)->except('show');
     Route::resource('/contact-me',ConatctMeController::class)->except('show');
     Route::resource('/touch',TouchController::class)->except('show');
+    Route::resource('/setting',SettingController::class)->except('show');
 });

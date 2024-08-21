@@ -26,20 +26,20 @@
                     <ul>
                         <li>
                             <div class="list_inner">
-                                <img class="svg" src="{{asset('assets/img/svg/location.svg')}}" alt="" />
-                                <p><span class="first">Address:</span><span class="second">Brook 103, New York, USA</span></p>
+                                <img class="svg" src="{{asset('storage/'.$setting->address_image ?? '')}}" alt="" />
+                                <p><span class="first">{{$setting->address_label}}:</span><span class="second">{{$setting->address ?? ''}}</span></p>
                             </div>
                         </li>
                         <li>
                             <div class="list_inner">
-                                <img class="svg" src="{{asset('assets/img/svg/email.svg')}}" alt="" />
-                                <p><span class="first">Email:</span><span class="second"><a href="#">example@gmail.com</a></span></p>
+                                <img class="svg" src="{{asset('storage/'.$setting->email_image ?? '')}}" alt="" />
+                                <p><span class="first">{{$setting->email_label ?? ''}}:</span><span class="second"><a href="#">{{$setting->email ?? ''}}</a></span></p>
                             </div>
                         </li>
                         <li>
                             <div class="list_inner">
-                                <img class="svg" src="{{asset('assets/img/svg/phone.svg')}}" alt="" />
-                                <p><span class="first">Phone:</span><span class="second"><a href="#">+77 033 442 55 57</a></span></p>
+                                <img class="svg" src="{{asset('storage/'.$setting->phone_image ?? '')}}" alt="" />
+                                <p><span class="first">{{$setting->phone_label ?? ''}}:</span><span class="second"><a href="#">{{$setting->phone ?? ''}}</a></span></p>
                             </div>
                         </li>
 

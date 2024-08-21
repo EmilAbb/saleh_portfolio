@@ -2,8 +2,8 @@
     <div class="container">
         <div class="topbar_inner">
             <div class="logo">
-                <a class="dark" href="#"><img src="{{asset('assets/img/logo/dark.png')}}" alt="" /></a>
-                <a class="light" href="#"><img src="{{asset('assets/img/logo/logo.png')}}" alt="" /></a>
+                <a class="dark" href="#"><img src="{{asset('storage/'.$setting->logo_second ?? '')}}" alt="" /></a>
+                <a class="light" href="#"><img src="{{asset('storage/'.$setting->logo ?? '')}}" alt="" /></a>
             </div>
             <div class="menu">
                 <ul class="anchor_nav">

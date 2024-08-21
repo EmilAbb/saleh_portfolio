@@ -26,6 +26,7 @@ class SocialService
     {
         $data = $socialRequest->all();
         $data['social_image'] = $this->fileUploadService->uploadFile($socialRequest->social_image, 'socials');
+        $data['social_image_two'] = $this->fileUploadService->uploadFile($socialRequest->social_image_two, 'socials');
         unset($data['_token']);
         $model = Social::create($data);
         self::clearCache();
@@ -37,6 +38,10 @@ class SocialService
         $data = $request->all();
         if ($request->has('social_image')) {
             $data['social_image'] = $this->fileUploadService->replaceFile($request->social_image, $model->social_image, 'socials');
+        }
+
+        if ($request->has('social_image_two')) {
+            $data['social_image_two'] = $this->fileUploadService->replaceFile($request->social_image_two, $model->social_image_two, 'socials');
         }
         $model =   $this->repository->save($data,$model );
         self::clearCache();

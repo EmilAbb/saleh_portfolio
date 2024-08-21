@@ -1,7 +1,7 @@
 @extends('admin.layouts.admin')
 @section('content')
 
-    <?php  $routeName='admin.socials' ?>
+    <?php  $routeName='admin.setting' ?>
     <a class="btn btn-primary my-1" href="{{route($routeName.'.create')}}">Add</a>
 
     <div class="card">
@@ -10,10 +10,17 @@
                 <thead>
                 <tr>
                     <th>id</th>
-                    <th>Social Label</th>
-                    <th>Social</th>
-                    <th>Social Image</th>
-                    <th>Social Image Two</th>
+                    <th>Address label</th>
+                    <th>Address</th>
+                    <th>Address image</th>
+                    <th>Phone label</th>
+                    <th>Phone</th>
+                    <th>Phone image</th>
+                    <th>Email label</th>
+                    <th>Email</th>
+                    <th>Email image</th>
+                    <th>Logo</th>
+                    <th>Logo second</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -24,10 +31,17 @@
 
                     <tr>
                         <td>{{$model->id}}</td>
-                        <td>{{$model->social_label}}</td>
-                        <td>{{Str::limit($model->social,60)}}</td>
-                        <td><img width="40" height="40" src="{{asset('storage/'.$model->social_image)}}" alt=""></td>
-                        <td style="background-color: #343a40;"><img width="40" height="40" src="{{asset('storage/'.$model->social_image_two)}}" alt=""></td>
+                        <td>{{$model->address_label}}</td>
+                        <td>{{$model->address}}</td>
+                        <td><img width="40" height="40" src="{{asset('storage/'.$model->address_image)}}" alt=""></td>
+                        <td>{{$model->phone}}</td>
+                        <td>{{$model->phone_label}}</td>
+                        <td><img width="40" height="40" src="{{asset('storage/'.$model->phone_image)}}" alt=""></td>
+                        <td>{{$model->email}}</td>
+                        <td>{{$model->email_label}}</td>
+                        <td><img width="40" height="40" src="{{asset('storage/'.$model->email_image)}}" alt=""></td>
+                        <td style="background-color: #000;"><img width="40" height="40" src="{{asset('storage/'.$model->logo)}}" alt=""></td>
+                        <td><img width="40" height="40" src="{{asset('storage/'.$model->logo_second)}}" alt=""></td>
                         <td>
                             <a class="btn bg-yellow" href="{{route($routeName.'.edit',$model->id)}}"><i class="fa-solid fa-pen text-white"></i></a>
                         </td>

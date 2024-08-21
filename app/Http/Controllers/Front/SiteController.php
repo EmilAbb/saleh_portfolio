@@ -10,6 +10,7 @@ use App\Models\ContactMessage;
 use App\Models\FirstSection;
 use App\Models\Menu;
 use App\Models\ProgresTitle;
+use App\Models\Setting;
 use App\Models\Skill;
 use App\Models\Social;
 use App\Models\Touch;
@@ -28,7 +29,8 @@ class SiteController extends Controller
         $progressTitle = ProgresTitle::first();
         $contactMe = ContactMe::first();
         $touch = Touch::first();
-        return view('front.pages.home',compact('menus','touch','firstSection','socials','aboutMe','skillAll','skillFeatureds','progressTitle','contactMe'));
+        $setting = Setting::first();
+        return view('front.pages.home',compact('menus','touch','setting','firstSection','socials','aboutMe','skillAll','skillFeatureds','progressTitle','contactMe'));
     }
 
     public function createMessage(ContactMessageRequest $contactMessageRequest)

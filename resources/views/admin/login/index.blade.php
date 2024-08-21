@@ -9,50 +9,182 @@
     <link rel="stylesheet" href="{{asset('_assets/css/adminlte.min.css')}}">
     <link rel="stylesheet" href="{{asset('_assets/css/admin.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background: #222D32;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .login-box {
+            margin-top: 75px;
+            height: auto;
+            background: #1A2226;
+            text-align: center;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        .login-key {
+            height: 100px;
+            font-size: 80px;
+            line-height: 100px;
+            background: -webkit-linear-gradient(#27EF9F, #0DB8DE);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .login-title {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 30px;
+            letter-spacing: 2px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #ECF0F5;
+        }
+
+        .login-form {
+            margin-top: 25px;
+            text-align: left;
+        }
+
+        input[type=text] {
+            background-color: #1A2226;
+            border: none;
+            border-bottom: 2px solid #0DB8DE;
+            border-top: 0px;
+            border-radius: 0px;
+            font-weight: bold;
+            outline: 0;
+            margin-bottom: 20px;
+            padding-left: 0px;
+            color: #ECF0F5;
+        }
+
+        input[type=password] {
+            background-color: #1A2226;
+            border: none;
+            border-bottom: 2px solid #0DB8DE;
+            border-top: 0px;
+            border-radius: 0px;
+            font-weight: bold;
+            outline: 0;
+            padding-left: 0px;
+            margin-bottom: 20px;
+            color: #ECF0F5;
+        }
+
+        .form-group {
+            margin-bottom: 40px;
+            outline: 0px;
+        }
+
+        .form-control:focus {
+            border-color: inherit;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border-bottom: 2px solid #0DB8DE;
+            outline: 0;
+            background-color: #1A2226;
+            color: #ECF0F5;
+        }
+
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 0;
+        }
+
+        label {
+            margin-bottom: 0px;
+        }
+
+        .form-control-label {
+            font-size: 10px;
+            color: #6C6C6C;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .btn-outline-primary {
+            border-color: #0DB8DE;
+            color: #0DB8DE;
+            border-radius: 0px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #0DB8DE;
+            right: 0px;
+        }
+
+        .login-btm {
+            float: left;
+        }
+
+        .login-button {
+            padding-right: 0px;
+            text-align: right;
+            margin-bottom: 25px;
+        }
+
+        .login-text {
+            text-align: left;
+            padding-left: 0px;
+            color: #A2A4A4;
+        }
+
+        .loginbttm {
+            padding: 0px;
+        }
+    </style>
 </head>
 
 <body class="hold-transition sidebar-mini">
 
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-2"></div>
+        <div class="col-lg-6 col-md-8 login-box">
+            <div class="col-lg-12 login-key">
+                <i class="fa fa-key" aria-hidden="true"></i>
+            </div>
+            <div class="col-lg-12 login-title">
+                ADMIN PANEL
+            </div>
 
-<div class="login-card" style="width: 100%; height: 100%; display: flex;justify-content: center;align-items: center">
-    <div class="login-card-content">
-        <div class="header">
+            <div class="col-lg-12 login-form">
+                <div class="col-lg-12 login-form">
+                    <form action="{{route('admin.login')}}" method="post">
+                        @csrf
+                        <div class="form-group">
+                            <label class="form-control-label">EMAIL</label>
+                            <input type="text" class="form-control" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label">PASSWORD</label>
+                            <input type="password" class="form-control" name="password">
+                        </div>
 
-
+                        <div class="col-lg-12 loginbttm">
+                            <div class="col-lg-6 login-btm login-text">
+                                <!-- Error Message -->
+                            </div>
+                            <div class="col-lg-6 login-btm login-button">
+                                <button type="submit" class="btn btn-outline-primary">LOGIN</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-2"></div>
         </div>
     </div>
 
-    <form action="{{ route('admin.login') }}" method="post">
-        @csrf
-        <div class="mb-3">
-            <h3 style="color: #fdc654;font-weight: 600;font-size: 20px; margin-top: 15px" class="w-100 text-center">MARK</h3>
-            <label for="exampleInputEmail1"  class="form-label">Email address</label>
-            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="w-[100%] d-flex justify-content-end">
-            <button type="submit" class="btn btn-warning">Login</button>
-        </div>
-    </form>
-
-</div>
-
-<script>
-    var showp = document.getElementById("showp");
-    var passwordInput = document.getElementById("password");
-
-    showp.addEventListener("click", function () {
-        if (passwordInput.type === "password") {
-            passwordInput.type = "text";
-        } else {
-            passwordInput.type = "password";
-        }
-    });
 
 
-</script>
+
+
+
 </body>
 </html>

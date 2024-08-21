@@ -34,7 +34,7 @@
                         </ul>
                     </div>
                     <div class="grax_tm_button">
-                        <a href="{{asset('assets/img/resume/resume.jpg')}}" download>Download CV</a>
+                        <a href="{{asset('storage/'.$setting->cv ?? '')}}" download>Download CV</a>
                     </div>
                 </div>
             </div>

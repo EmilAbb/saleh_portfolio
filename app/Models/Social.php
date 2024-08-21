@@ -10,5 +10,5 @@ class Social extends Model
     use HasFactory;
 
     protected $table='socials';
-    protected $fillable=['social_image','social','social_label'];
+    protected $fillable=['social_image','social_image_two','social','social_label'];
 }

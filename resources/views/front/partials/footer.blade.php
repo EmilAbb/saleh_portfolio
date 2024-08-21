@@ -9,15 +9,13 @@
         <div class="container">
             <div class="copyright_inner">
                 <div class="logo wow fadeInLeft" data-wow-duration="1s">
-                    <img src="{{asset('assets/img/logo/logo.png')}}" alt="" />
+                    <img src="{{asset('storage/'.$setting->logo ?? '')}}" alt="" />
                 </div>
                 <div class="social wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".2s">
                     <ul>
-                        <li><a href="#"><img class="svg" src="{{asset('assets/img/svg/social/facebook.svg')}}" alt="" /></a></li>
-                        <li><a href="#"><img class="svg" src="{{asset('assets/img/svg/social/twitter.svg')}}" alt="" /></a></li>
-                        <li><a href="#"><img class="svg" src="{{asset('assets/img/svg/social/dribbble.svg')}}" alt="" /></a></li>
-                        <li><a href="#"><img class="svg" src="{{asset('assets/img/svg/social/tik-tok.svg')}}" alt="" /></a></li>
-                        <!-- You can download another svg icons from here for free https://www.flaticon.com -->
+                       @foreach($socials as $social)
+                            <li><a href="{{$social->social ?? ''}}"><img class="" src="{{asset('storage/'.$social->social_image_two ?? '')}}" alt="" /></a></li>
+                       @endforeach
                     </ul>
                 </div>
                 <div class="copy wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s">
