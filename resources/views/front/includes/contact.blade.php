@@ -1,12 +1,26 @@
 <div class="grax_tm_contact" id="contact">
     <div class="container">
         <div class="grax_tm_title_holder">
-            <h3>Get in <span>Touch</span></h3>
+            @php
+                $title = $touch->title;
+
+                $parts = explode(' ', $title, 3);
+
+                if (isset($parts[1])) {
+                    $leftParts = $parts[0] . ' ' . $parts[1];
+                    $right = isset($parts[2]) ? $parts[2] : '';
+                } else {
+                    $leftParts = $parts[0];
+                    $right = '';
+                }
+            @endphp
+
+            <h3>{{ $leftParts ?? '' }} <span>{{ $right ?? '' }}</span></h3>
         </div>
         <div class="contact_inner">
             <div class="left wow fadeInLeft" data-wow-duration="1s">
                 <div class="text">
-                    <p>Please fill out the form on this section to contact with me. Or call between 9:00 a.m. and 8:00 p.m. ET, Monday through Friday</p>
+                    <p>{{$touch->text ?? ''}}</p>
                 </div>
                 <div class="info_list">
                     <ul>

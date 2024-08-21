@@ -53,3 +53,8 @@
     <a href="{{route('admin.contact-me.index')}}" class="nav-link">
         <span>Contact me</span></a>
 </li>
+
+<li class="nav-item ">
+    <a href="{{route('admin.touch.index')}}" class="nav-link">
+        <span>Contact Title</span></a>
+</li>

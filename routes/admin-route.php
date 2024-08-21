@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\ProgressTitleController;
 use App\Http\Controllers\Admin\SkillController;
 use App\Http\Controllers\Admin\SocialController;
+use App\Http\Controllers\Admin\TouchController;
 use App\Http\Controllers\ContactMessageController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,4 +29,5 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware' => 'admin'],function
     Route::resource('/messages',ContactMessageController::class)->except('show');
     Route::resource('/progress',ProgressTitleController::class)->except('show');
     Route::resource('/contact-me',ConatctMeController::class)->except('show');
+    Route::resource('/touch',TouchController::class)->except('show');
 });

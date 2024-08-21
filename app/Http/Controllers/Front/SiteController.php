@@ -12,6 +12,7 @@ use App\Models\Menu;
 use App\Models\ProgresTitle;
 use App\Models\Skill;
 use App\Models\Social;
+use App\Models\Touch;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -26,7 +27,8 @@ class SiteController extends Controller
         $socials = Social::all();
         $progressTitle = ProgresTitle::first();
         $contactMe = ContactMe::first();
-        return view('front.pages.home',compact('menus','firstSection','socials','aboutMe','skillAll','skillFeatureds','progressTitle','contactMe'));
+        $touch = Touch::first();
+        return view('front.pages.home',compact('menus','touch','firstSection','socials','aboutMe','skillAll','skillFeatureds','progressTitle','contactMe'));
     }
 
     public function createMessage(ContactMessageRequest $contactMessageRequest)
