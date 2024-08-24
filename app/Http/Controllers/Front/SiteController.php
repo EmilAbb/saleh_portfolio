@@ -15,6 +15,7 @@ use App\Models\Setting;
 use App\Models\Skill;
 use App\Models\Social;
 use App\Models\Touch;
+use App\Models\Video;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -32,7 +33,8 @@ class SiteController extends Controller
         $touch = Touch::first();
         $setting = Setting::first();
         $categories = Category::all();
-        return view('front.pages.home',compact('menus','touch','categories','setting','firstSection','socials','aboutMe','skillAll','skillFeatureds','progressTitle','contactMe'));
+        $videos = Video::all();
+        return view('front.pages.home',compact('menus','touch','videos','categories','setting','firstSection','socials','aboutMe','skillAll','skillFeatureds','progressTitle','contactMe'));
     }
 
     public function createMessage(ContactMessageRequest $contactMessageRequest)

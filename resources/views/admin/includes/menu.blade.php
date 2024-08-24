@@ -68,3 +68,9 @@
     <a href="{{route('admin.categories.index')}}" class="nav-link">
         <span>Categories</span></a>
 </li>
+
+<li class="nav-item ">
+    <a href="{{route('admin.videos.index')}}" class="nav-link">
+        <span>Videos</span></a>
+</li>
+
