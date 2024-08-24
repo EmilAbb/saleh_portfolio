@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactMessageRequest;
 use App\Models\About;
+use App\Models\Category;
 use App\Models\ContactMe;
 use App\Models\ContactMessage;
 use App\Models\FirstSection;
@@ -30,7 +31,8 @@ class SiteController extends Controller
         $contactMe = ContactMe::first();
         $touch = Touch::first();
         $setting = Setting::first();
-        return view('front.pages.home',compact('menus','touch','setting','firstSection','socials','aboutMe','skillAll','skillFeatureds','progressTitle','contactMe'));
+        $categories = Category::all();
+        return view('front.pages.home',compact('menus','touch','categories','setting','firstSection','socials','aboutMe','skillAll','skillFeatureds','progressTitle','contactMe'));
     }
 
     public function createMessage(ContactMessageRequest $contactMessageRequest)

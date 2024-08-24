@@ -5,6 +5,7 @@
 //,'middleware'=>'admin'
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ConatctMeController;
 use App\Http\Controllers\Admin\FirstSectionController;
 use App\Http\Controllers\Admin\MenuController;
@@ -32,4 +33,5 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware' => 'admin'],function
     Route::resource('/contact-me',ConatctMeController::class)->except('show');
     Route::resource('/touch',TouchController::class)->except('show');
     Route::resource('/setting',SettingController::class)->except('show');
+    Route::resource('/categories',CategoryController::class)->except('show');
 });

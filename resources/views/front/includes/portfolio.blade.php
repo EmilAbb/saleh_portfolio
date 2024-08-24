@@ -4,8 +4,31 @@
             <div class="grax_tm_title_holder">
                 <h3>Selected <span>Works</span></h3>
             </div>
+
+            <div class="categories">
+              <div class="categories-inner">
+                @foreach($categories as $category)
+                      <p data-value="{{$category->id ?? ''}}">{{$category->name ?? ''}}</p>
+                @endforeach
+              </div>
+            </div>
+
             <div class="portfolio_list">
                 <ul class="gallery_zoom my_waypoint">
+                    <li class="wow fadeInLeft" data-wow-duration="1.5s">
+                        <div class="list_inner">
+                            <div class="image">
+                                <img src="{{asset('assets/img/placeholders/1-1.jpg')}}" alt="" />
+                                <div class="main" data-img-url="{{asset('assets/img/portfolio/1.jpg')}}"></div>
+                            </div>
+                            <div class="overlay"></div>
+                            <div class="details">
+                                <span>Video</span>
+                                <h3>Sweet Fruit</h3>
+                            </div>
+                            <a class="grax_tm_full_link popup-youtube" href="https://www.youtube.com/watch?v=P72VhAX_c5g"></a>
+                        </div>
+                    </li>
                     <li class="wow fadeInLeft" data-wow-duration="1.5s">
                         <div class="list_inner">
                             <div class="image">
@@ -20,76 +43,63 @@
                             <a class="grax_tm_full_link popup-youtube" href="https://www.youtube.com/watch?v=ICr_bOuM9Zo"></a>
                         </div>
                     </li>
-                    <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".2s">
+                    <li class="wow fadeInLeft" data-wow-duration="1.5s">
                         <div class="list_inner">
                             <div class="image">
                                 <img src="{{asset('assets/img/placeholders/1-1.jpg')}}" alt="" />
-                                <div class="main" data-img-url="{{asset('assets/img/portfolio/2.jpg')}}"></div>
+                                <div class="main" data-img-url="{{asset('assets/img/portfolio/1.jpg')}}"></div>
                             </div>
                             <div class="overlay"></div>
                             <div class="details">
-                                <span>Branding</span>
-                                <h3>Good Present</h3>
+                                <span>Video</span>
+                                <h3>Sweet Fruit</h3>
                             </div>
-                            <a class="grax_tm_full_link zoom" href="{{asset('assets/img/portfolio/2.jpg')}}"></a>
-                        </div>
-                    </li>
-                    <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".4s">
-                        <div class="list_inner">
-                            <div class="image">
-                                <img src="{{asset('assets/img/placeholders/1-1.jpg')}}" alt="" />
-                                <div class="main" data-img-url="{{asset('assets/img/portfolio/3.jpg')}}"></div>
-                            </div>
-                            <div class="overlay"></div>
-                            <div class="details">
-                                <span>Design</span>
-                                <h3>Ice Cream</h3>
-                            </div>
-                            <a class="grax_tm_full_link zoom" href="{{asset('assets/img/portfolio/3.jpg')}}"></a>
+                            <a class="grax_tm_full_link popup-youtube" href="https://www.youtube.com/watch?v=ICr_bOuM9Zo"></a>
                         </div>
                     </li>
                     <li class="wow fadeInLeft" data-wow-duration="1.5s">
                         <div class="list_inner">
                             <div class="image">
                                 <img src="{{asset('assets/img/placeholders/1-1.jpg')}}" alt="" />
-                                <div class="main" data-img-url="{{asset('assets/img/portfolio/4.jpg')}}"></div>
+                                <div class="main" data-img-url="{{asset('assets/img/portfolio/1.jpg')}}"></div>
                             </div>
                             <div class="overlay"></div>
                             <div class="details">
                                 <span>Video</span>
-                                <h3>Black Coffee</h3>
+                                <h3>Sweet Fruit</h3>
                             </div>
                             <a class="grax_tm_full_link popup-youtube" href="https://www.youtube.com/watch?v=ICr_bOuM9Zo"></a>
                         </div>
                     </li>
-                    <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".2s">
+                    <li class="wow fadeInLeft" data-wow-duration="1.5s">
                         <div class="list_inner">
                             <div class="image">
                                 <img src="{{asset('assets/img/placeholders/1-1.jpg')}}" alt="" />
-                                <div class="main" data-img-url="{{asset('assets/img/portfolio/5.jpg')}}"></div>
+                                <div class="main" data-img-url="{{asset('assets/img/portfolio/1.jpg')}}"></div>
                             </div>
                             <div class="overlay"></div>
                             <div class="details">
-                                <span>Branding</span>
-                                <h3>Blue Lemon</h3>
+                                <span>Video</span>
+                                <h3>Sweet Fruit</h3>
                             </div>
-                            <a class="grax_tm_full_link zoom" href="{{asset('assets/img/portfolio/5.jpg')}}"></a>
+                            <a class="grax_tm_full_link popup-youtube" href="https://www.youtube.com/watch?v=ICr_bOuM9Zo"></a>
                         </div>
                     </li>
-                    <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".4s">
+                    <li class="wow fadeInLeft" data-wow-duration="1.5s">
                         <div class="list_inner">
                             <div class="image">
                                 <img src="{{asset('assets/img/placeholders/1-1.jpg')}}" alt="" />
-                                <div class="main" data-img-url="{{asset('assets/img/portfolio/7.jpg')}}"></div>
+                                <div class="main" data-img-url="{{asset('assets/img/portfolio/1.jpg')}}"></div>
                             </div>
                             <div class="overlay"></div>
                             <div class="details">
-                                <span>Design</span>
-                                <h3>Delicious Cherry</h3>
+                                <span>Video</span>
+                                <h3>Sweet Fruit</h3>
                             </div>
-                            <a class="grax_tm_full_link zoom" href="{{asset('assets/img/portfolio/7.jpg')}}"></a>
+                            <a class="grax_tm_full_link popup-youtube" href="https://www.youtube.com/watch?v=ICr_bOuM9Zo"></a>
                         </div>
                     </li>
+
                 </ul>
             </div>
         </div>

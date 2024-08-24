@@ -63,3 +63,8 @@
     <a href="{{route('admin.setting.index')}}" class="nav-link">
         <span>Setting</span></a>
 </li>
+
+<li class="nav-item ">
+    <a href="{{route('admin.categories.index')}}" class="nav-link">
+        <span>Categories</span></a>
+</li>
