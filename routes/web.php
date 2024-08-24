@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[SiteController::class,'home'])->name('home');
 Route::post('/send-message',[SiteController::class,'createMessage'])->name('createMessage');
+Route::get('/video-filter',[SiteController::class,'videoFilter'])->name('videoFilter');

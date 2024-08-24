@@ -45,4 +45,11 @@ class SiteController extends Controller
     }
 
 
+    public function videoFilter(Request $request)
+    {
+        $categoryID = $request->input('category_id');
+        $videos = Video::where('category_id',$categoryID)->get();
+        return view('front.partials.videos', compact('videos'))->render();
+    }
+
 }

@@ -12,6 +12,15 @@
     </a>
 </li>
 
+<li class="nav-item ">
+    <a href="{{route('home')}}" target="_blank" class="nav-link">
+        <span>Website</span></a>
+</li>
+
+<li class="nav-item ">
+    <a href="{{route('admin.home')}}" class="nav-link">
+        <span>Admin home</span></a>
+</li>
 
 <li class="nav-item ">
     <a href="{{route('admin.menus.index')}}" class="nav-link">
