@@ -48,7 +48,7 @@
                             <li>
                                 <div class="list_inner">
                                     <img class="svg" src="{{asset('storage/'.$social->social_image ?? '')}}" alt="" />
-                                    <p><span class="first">{{$social->social_label ?? ''}}:</span><span class="second"><a target="_blank" href="{{$social->social ?? ''}}">{{$social->social ?? ''}}</a></span></p>
+                                    <p><span class="first">{{$social->social_label ?? ''}}:</span><span class="second"><a target="_blank" style="font-size: 13px" href="{{$social->social ?? ''}}">{{Str::limit($social->social,25) ?? ''}}</a></span></p>
                                 </div>
                             </li>
                         @endforeach

@@ -2407,7 +2407,8 @@ body.dark .grax_tm_settings .cursor li .svg,
 
 .grax_tm_portfolio .categories .categories-inner{
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    flex-wrap: wrap;
     align-items: center;
     margin-top: 30px;
     gap: 20px;
